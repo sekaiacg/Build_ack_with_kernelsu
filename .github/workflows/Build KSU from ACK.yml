@@ -47,7 +47,7 @@ jobs:
         git config --global user.name "YuKongA"
         git config --global user.email 70465933+YuKongA@users.noreply.github.com
         mkdir android-kernel && cd android-kernel
-        repo init --depth=1 --u https://android.googlesource.com/kernel/manifest -b common-${{ inputs.TAG }} --repo-rev=v2.16
+        repo init --depth=1 --u https://android.googlesource.com/kernel/manifest -b common-android12-5.10-2022-10 --repo-rev=v2.16
         REMOTE_BRANCH=$(git ls-remote https://android.googlesource.com/kernel/common ${{ inputs.TAG }})
         DEFAULT_MANIFEST_PATH=.repo/manifests/default.xml
         if grep -q deprecated <<< $REMOTE_BRANCH; then
